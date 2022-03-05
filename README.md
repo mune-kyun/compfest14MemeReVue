@@ -2,7 +2,7 @@
 
 ### Getting Started
 
-Boilerplate ini menggunakan BlitzJS sebagai frameworknya. Akan tetapi, bagi teman-teman yang sudah berpengalaman dengan NextJS tidak perlu khawatir karena BlitzJS cara kerjanya sama dengan NextJS hanya saja terdapat fitur-fitur tambahan yang akan memudahkan prorses development nantinya.
+Boilerplate ini menggunakan BlitzJS sebagai frameworknya. Akan tetapi, bagi teman-teman yang sudah berpengalaman dengan NextJS tidak perlu khawatir karena BlitzJS cara kerjanya sama dengan NextJS hanya saja terdapat fitur-fitur tambahan yang akan memudahkan proses development nantinya.
 
 #### 1. Pastikan teman-teman sudah menginstall npm dan nodejs dengan versi 12 ke atas
 
@@ -69,12 +69,12 @@ Teman-teman bisa melihat langsung data yang ada pada database dengan menjalankan
 
 ## Styling
 
-Pada boilerplate ini sudah terkonfigurasi dengan TailwindCSS (https://tailwindcss.com/). Jika teman-teman ingin menggunakan library atau framework lain silakan tambahkan sendiri.
+Boilerplate ini sudah terkonfigurasi dengan TailwindCSS (https://tailwindcss.com/). Jika teman-teman ingin menggunakan library atau framework css lain silakan tambahkan sendiri.
 
 ## Schema
 
 Schema itu apa sih?
-Schema itu intinya adalah kayak lembaran yang isinya hal-hal yang bisa diakses user, programmer seperti teman-teman, calon Software Engineer COMPFEST!
+Schema itu intinya adalah lembaran yang isinya hal-hal yang bisa diakses user, programmer seperti teman-teman, calon Software Engineer COMPFEST!
 
 Nah, dengan Schema ini, kamu bisa melakukan banyak hal, yang paling utama adalah Query dan Mutation.
 Query adalah "mengambil" data dari schema yang diberikan, dan Mutation adalah melakukan "perubahan" terhadap kumpulan data yang ada.
@@ -85,7 +85,7 @@ Teman-teman bisa melihat data model di db/schema.prisma. Teman-teman cukup fokus
 
 - id, bertipe integer sebagai key dari setiap data memes
 - title, bertipe string, digunakan untuk memberikan informasi tentang memes (kamu bisa memanfaatkan attribute ini untuk fitur search)
-- imageSrc, bertipe string dan berformat URL, digunakan untuk menampilkan gambar
-- saved, beripe boolean dengan default value false, digunakan untuk menandakan apakah memes sudah disimpan atau belum
+- imageSrc, bertipe string dengan format URL, digunakan untuk menampilkan gambar
+- saved, bertipe boolean dengan default value false, digunakan untuk menandakan apakah meme sudah disimpan atau belum
 
 want to ask? contact us through line id: 0017849211
