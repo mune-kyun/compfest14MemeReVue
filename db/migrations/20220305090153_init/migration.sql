@@ -25,16 +25,11 @@ CREATE TABLE "Session" (
 );
 
 -- CreateTable
-CREATE TABLE "Token" (
+CREATE TABLE "Memes" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" DATETIME NOT NULL,
-    "hashedToken" TEXT NOT NULL,
-    "type" TEXT NOT NULL,
-    "expiresAt" DATETIME NOT NULL,
-    "sentTo" TEXT NOT NULL,
-    "userId" INTEGER NOT NULL,
-    CONSTRAINT "Token_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+    "title" TEXT NOT NULL,
+    "imageSrc" TEXT NOT NULL,
+    "saved" BOOLEAN NOT NULL DEFAULT false
 );
 
 -- CreateIndex
@@ -42,6 +37,3 @@ CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "Session_handle_key" ON "Session"("handle");
-
--- CreateIndex
-CREATE UNIQUE INDEX "Token_hashedToken_type_key" ON "Token"("hashedToken", "type");
