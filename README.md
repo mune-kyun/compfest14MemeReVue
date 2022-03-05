@@ -1,173 +1,91 @@
-[![Blitz.js](https://raw.githubusercontent.com/blitz-js/art/master/github-cover-photo.png)](https://blitzjs.com)
+## Compfest Software Engineering Task
 
-This is a [Blitz.js](https://github.com/blitz-js/blitz) app.
+### Getting Started
 
-# **oprec-staff**
+Boilerplate ini menggunakan BlitzJS sebagai frameworknya. Akan tetapi, bagi teman-teman yang sudah berpengalaman dengan NextJS tidak perlu khawatir karena BlitzJS cara kerjanya sama dengan NextJS hanya saja terdapat fitur-fitur tambahan yang akan memudahkan prorses development nantinya.
 
-## Getting Started
+#### 1. Pastikan teman-teman sudah menginstall npm dan nodejs dengan versi 12 ke atas
 
-Run your app in the development mode.
-
-```
-blitz dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Environment Variables
-
-Ensure the `.env.local` file has required environment variables:
+#### 2. Install blitz cli
 
 ```
-DATABASE_URL=postgresql://<YOUR_DB_USERNAME>@localhost:5432/oprec-staff
+  npm install -g blitz --legacy-peer-deps
 ```
 
-Ensure the `.env.test.local` file has required environment variables:
+#### 3. Generate the Route Manifest
 
 ```
-DATABASE_URL=postgresql://<YOUR_DB_USERNAME>@localhost:5432/oprec-staff_test
+  blitz codegen
 ```
 
-## Tests
-
-Runs your tests using Jest.
+#### 4. Migrate Prisma Schema
 
 ```
-yarn test
+  blitz p migrate dev
 ```
 
-Blitz comes with a test setup using [Jest](https://jestjs.io/) and [react-testing-library](https://testing-library.com/).
-
-## Commands
-
-Blitz comes with a powerful CLI that is designed to make development easy and fast. You can install it with `npm i -g blitz`
+#### 5. Generate Prisma Client
 
 ```
-  blitz [COMMAND]
-
-  dev       Start a development server
-  build     Create a production build
-  start     Start a production server
-  export    Export your Blitz app as a static application
-  prisma    Run prisma commands
-  generate  Generate new files for your Blitz project
-  console   Run the Blitz console REPL
-  install   Install a recipe
-  help      Display help for blitz
-  test      Run project tests
+  blitz p generate
 ```
 
-You can read more about it on the [CLI Overview](https://blitzjs.com/docs/cli-overview) documentation.
-
-## What's included?
-
-Here is the starting structure of your app.
+#### 6. Run the development server
 
 ```
-oprec-staff
-├── app/
-│   ├── api/
-│   ├── auth/
-│   │   ├── components/
-│   │   │   ├── LoginForm.tsx
-│   │   │   └── SignupForm.tsx
-│   │   ├── mutations/
-│   │   │   ├── changePassword.ts
-│   │   │   ├── forgotPassword.test.ts
-│   │   │   ├── forgotPassword.ts
-│   │   │   ├── login.ts
-│   │   │   ├── logout.ts
-│   │   │   ├── resetPassword.test.ts
-│   │   │   ├── resetPassword.ts
-│   │   │   └── signup.ts
-│   │   ├── pages/
-│   │   │   ├── forgot-password.tsx
-│   │   │   ├── login.tsx
-│   │   │   ├── reset-password.tsx
-│   │   │   └── signup.tsx
-│   │   └── validations.ts
-│   ├── core/
-│   │   ├── components/
-│   │   │   ├── Form.tsx
-│   │   │   └── LabeledTextField.tsx
-│   │   ├── hooks/
-│   │   │   └── useCurrentUser.ts
-│   │   └── layouts/
-│   │       └── Layout.tsx
-│   ├── pages/
-│   │   ├── _app.tsx
-│   │   ├── _document.tsx
-│   │   ├── 404.tsx
-│   │   ├── index.test.tsx
-│   │   └── index.tsx
-│   └── users/
-│       └── queries/
-│           └── getCurrentUser.ts
-├── db/
-│   ├── migrations/
-│   ├── index.ts
-│   ├── schema.prisma
-│   └── seeds.ts
-├── integrations/
-├── mailers/
-│   └── forgotPasswordMailer.ts
-├── public/
-│   ├── favicon.ico
-│   └── logo.png
-├── test/
-│   ├── setup.ts
-│   └── utils.tsx
-├── .eslintrc.js
-├── babel.config.js
-├── blitz.config.ts
-├── jest.config.ts
-├── package.json
-├── README.md
-├── tsconfig.json
-└── types.ts
+  blitz dev
+
+  # or
+
+  npm run dev
+
+  # or
+
+  yarn dev
 ```
 
-These files are:
+Teman-teman kemudian bisa membuat page di folder app/core/pages atau membuat component di folder app/core/components.
 
-- The `app/` folder is a container for most of your project. This is where you’ll put any pages or API routes.
+## Figma Link
 
-- `db/` is where your database configuration goes. If you’re writing models or checking migrations, this is where to go.
+https://www.figma.com/file/sx8mV4JFUo1qh5aaHmCGWb/Tugas-Oprec-Staf-SE
 
-- `public/` is a folder where you will put any static assets. If you have images, files, or videos which you want to use in your app, this is where to put them.
+## Data dari Database
 
-- `integrations/` is a folder to put all third-party integrations like with Stripe, Sentry, etc.
+Kita akan menggunakan prisma sebagai typeorm untuk bisa mengakses langsung data dari database. Teman-teman bisa langsung menggunakan hooks useMeme() yang sudah dibuatkan yang ada di app/core/hooks/useMeme.ts. Pada hooks tersebut juga sudah dibuatkan function untuk menyimpan meme dan menghapus meme yang sudah tersimpan. Silakan teman-teman pelajari cara kerjanya dengan membaca dokumentasi berikut:
 
-- `test/` is a folder where you can put test utilities and integration tests.
+- Blitzjs (https://blitzjs.com)
+- useQuery (https://blitzjs.com/docs/use-query)
+- useMutation (https://blitzjs.com/docs/use-mutation)
+- Prisma (https://www.prisma.io/)
 
-- `package.json` contains information about your dependencies and devDependencies. If you’re using a tool like `npm` or `yarn`, you won’t have to worry about this much.
+## Melihat Data dari Database
 
-- `tsconfig.json` is our recommended setup for TypeScript.
+Teman-teman bisa melihat langsung data yang ada pada database dengan menjalankan perintah berikut:
 
-- `.babel.config.js`, `.eslintrc.js`, `.env`, etc. ("dotfiles") are configuration files for various bits of JavaScript tooling.
+```
+  blitz p studio
+```
 
-- `blitz.config.ts` is for advanced custom configuration of Blitz. [Here you can learn how to use it](https://blitzjs.com/docs/blitz-config).
+## Styling
 
-- `jest.config.js` contains config for Jest tests. You can [customize it if needed](https://jestjs.io/docs/en/configuration).
+Pada boilerplate ini sudah terkonfigurasi dengan TailwindCSS (https://tailwindcss.com/). Jika teman-teman ingin menggunakan library atau framework lain silakan tambahkan sendiri.
 
-You can read more about it in the [File Structure](https://blitzjs.com/docs/file-structure) section of the documentation.
+## Schema
 
-### Tools included
+Schema itu apa sih?
+Schema itu intinya adalah kayak lembaran yang isinya hal-hal yang bisa diakses user, programmer seperti teman-teman, calon Software Engineer COMPFEST!
 
-Blitz comes with a set of tools that corrects and formats your code, facilitating its future maintenance. You can modify their options and even uninstall them.
+Nah, dengan Schema ini, kamu bisa melakukan banyak hal, yang paling utama adalah Query dan Mutation.
+Query adalah "mengambil" data dari schema yang diberikan, dan Mutation adalah melakukan "perubahan" terhadap kumpulan data yang ada.
 
-- **ESLint**: It lints your code: searches for bad practices and tell you about it. You can customize it via the `.eslintrc.js`, and you can install (or even write) plugins to have it the way you like it. It already comes with the [`blitz`](https://github.com/blitz-js/blitz/tree/canary/packages/eslint-config) config, but you can remove it safely. [Learn More](https://blitzjs.com/docs/eslint-config).
-- **Husky**: It adds [githooks](https://git-scm.com/docs/githooks), little pieces of code that get executed when certain Git events are triggerd. For example, `pre-commit` is triggered just before a commit is created. You can see the current hooks inside `.husky/`. If are having problems commiting and pushing, check out ther [troubleshooting](https://typicode.github.io/husky/#/?id=troubleshoot) guide. [Learn More](https://blitzjs.com/docs/husky-config).
-- **Prettier**: It formats your code to look the same everywhere. You can configure it via the `.prettierrc` file. The `.prettierignore` contains the files that should be ignored by Prettier; useful when you have large files or when you want to keep a custom formatting. [Learn More](https://blitzjs.com/docs/prettier-config).
+## Data Model
 
-## Learn more
+Teman-teman bisa melihat data model di db/schema.prisma. Teman-teman cukup fokus kepada satu data model, yaitu Memes. Pada data model Memes terdapat 4 attribute, yaitu:
 
-Read the [Blitz.js Documentation](https://blitzjs.com/docs/getting-started) to learn more.
+- id, bertipe integer sebagai key dari setiap data memes
+- title, bertipe string, digunakan untuk memberikan informasi tentang memes (kamu bisa memanfaatkan attribute ini untuk fitur search)
+- imageSrc, bertipe string dan berformat URL, digunakan untuk menampilkan gambar
+- saved, beripe boolean dengan default value false, digunakan untuk menandakan apakah memes sudah disimpan atau belum
 
-The Blitz community is warm, safe, diverse, inclusive, and fun! Feel free to reach out to us in any of our communication channels.
-
-- [Website](https://blitzjs.com)
-- [Discord](https://blitzjs.com/discord)
-- [Report an issue](https://github.com/blitz-js/blitz/issues/new/choose)
-- [Forum discussions](https://github.com/blitz-js/blitz/discussions)
-- [How to Contribute](https://blitzjs.com/docs/contributing)
-- [Sponsor or donate](https://github.com/blitz-js/blitz#sponsors-and-donations)
+want to ask? contact us through line id: 0017849211
