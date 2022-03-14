@@ -1,4 +1,6 @@
 import { Head, BlitzLayout } from "blitz"
+import Footer from "../components/elements/footer"
+import Navbar from "../components/elements/navbar"
 
 const Layout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
   return (
@@ -8,7 +10,9 @@ const Layout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {children}
+      <Navbar />
+      <div className="bg-[#323347]">{children}</div>
+      <Footer />
     </>
   )
 }

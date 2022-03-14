@@ -10,6 +10,7 @@ import {
 import { Suspense } from "react"
 
 import "app/core/styles/index.css"
+import Layout from "app/core/layouts/Layout"
 
 export default function App({ Component, pageProps }: AppProps) {
   const getLayout = Component.getLayout || ((page) => page)
@@ -19,7 +20,9 @@ export default function App({ Component, pageProps }: AppProps) {
       FallbackComponent={RootErrorFallback}
       onReset={useQueryErrorResetBoundary().reset}
     >
-      <Suspense fallback={<>Loading...</>}>{getLayout(<Component {...pageProps} />)}</Suspense>
+      <Suspense fallback={<>Loading...</>}>
+        <Layout>{getLayout(<Component {...pageProps} />)}</Layout>
+      </Suspense>
     </ErrorBoundary>
   )
 }
