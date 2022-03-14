@@ -6,10 +6,12 @@ const Home: BlitzPage = () => {
 
   return (
     <div>
+      <p></p>
       <div>
         {memes?.map((meme) => (
           <div className="mb-10 bg-gray-200" key={meme.id}>
             <h1 className="text-center text-xl">{meme.title}</h1>
+            <p>{`image link is: ${meme.imageSrc}`}</p>
             <Image
               width={100}
               height={100}
@@ -22,7 +24,7 @@ const Home: BlitzPage = () => {
         ))}
       </div>
 
-      <pre>{JSON.stringify(memes, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(memes, null, 2)}</pre> */}
     </div>
   )
 }
