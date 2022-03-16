@@ -11,7 +11,7 @@ const Layout: BlitzLayout<{ title?: string }> = ({ title, children }) => {
       </Head>
 
       <Navbar />
-      <div className="bg-[#323347]">{children}</div>
+      <div className="bg-[#323347] min-h-screen">{children}</div>
       <Footer />
     </>
   )
