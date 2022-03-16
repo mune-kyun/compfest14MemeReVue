@@ -21,10 +21,6 @@ const Explore: React.FC<ExploreProps> = ({ memes, saveMeme }) => {
 
   return (
     <div className="bg-[#323347] max-w-[1000px] mt-[60px] w-full">
-      <div className="text-[#FFFFFF] text-center">
-        <h1 className="font-bold text-[4rem]">Meme ReVue</h1>
-        <p className="font-medium text-[1rem]">(get it, cuz IT Dev, vuejs)</p>
-      </div>
       <div className="mt-[32px] mx-5">
         <p className="mb-[4px] font-medium text-base text-[#FFFFFF]">Search for a meme</p>
         <SearchInput handleSubmit={handleSubmit} />
