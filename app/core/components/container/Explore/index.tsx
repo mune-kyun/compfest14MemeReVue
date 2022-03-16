@@ -28,7 +28,7 @@ const Explore: React.FC<ExploreProps> = ({ memes, saveMeme }) => {
       <div className="mt-[40px] w-full flex justify-center">
         <Masonry
           breakpointCols={3}
-          className={styles.mymasonrygrid}
+          className="mymasonrygrid"
           columnClassName={styles.mymasonrygridcolumn}
         >
           {memes?.map((meme) => (
