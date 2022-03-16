@@ -1,8 +1,9 @@
-import { useRef, useState } from "react"
+import { useState } from "react"
 import Card from "../../elements/card"
 import styles from "./Explore.module.css"
 
 import Masonry from "react-masonry-css"
+import SearchInput from "../../elements/searchInput"
 
 type ExploreProps = {
   memes: any
@@ -11,13 +12,9 @@ type ExploreProps = {
 
 const Explore: React.FC<ExploreProps> = ({ memes, saveMeme }) => {
   const [memeValue, setMemeValue] = useState("")
-  const searchRef = useRef(null)
 
-  const handleSubmit = (event) => {
-    const searchInput = searchRef.current
-    if (searchInput == null) return
-    // alert(searchInput["value"])
-    setMemeValue(searchInput["value"])
+  const handleSubmit = (value) => {
+    setMemeValue(value)
   }
 
   if (memeValue.length != 0) memes = memes.filter((meme) => meme.title.includes(memeValue))
@@ -28,17 +25,11 @@ const Explore: React.FC<ExploreProps> = ({ memes, saveMeme }) => {
         <h1 className="font-bold text-[4rem]">Meme ReVue</h1>
         <p className="font-medium text-[1rem]">(get it, cuz IT Dev, vuejs)</p>
       </div>
-      <div className="flex">
-        <input
-          ref={searchRef}
-          type="text"
-          className="w-full"
-          name="search"
-          placeholder="search..."
-        />
-        <button onClick={handleSubmit}>searchs</button>
+      <div className="mt-[32px] mx-5">
+        <p className="mb-[4px] font-medium text-base text-[#FFFFFF]">Search for a meme</p>
+        <SearchInput handleSubmit={handleSubmit} />
       </div>
-      <div className="mt-[40px] w-full">
+      <div className="mt-[40px] w-full flex justify-center">
         <Masonry
           breakpointCols={3}
           className={styles.mymasonrygrid}
