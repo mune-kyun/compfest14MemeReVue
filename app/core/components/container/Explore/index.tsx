@@ -20,7 +20,7 @@ const Explore: React.FC<ExploreProps> = ({ memes, saveMeme }) => {
   if (memeValue.length != 0) memes = memes.filter((meme) => meme.title.includes(memeValue))
 
   return (
-    <div className="bg-[#323347] max-w-[1000px] mt-[60px] w-full">
+    <div className="bg-[#323347] max-w-[1000px] mt-[32px] w-full">
       <div className="mt-[32px] mx-5">
         <p className="mb-[4px] font-medium text-base text-[#FFFFFF]">Search for a meme</p>
         <SearchInput handleSubmit={handleSubmit} />

@@ -2,14 +2,14 @@ import { BlitzComponentType, Image } from "blitz"
 
 const Footer: BlitzComponentType = () => {
   return (
-    <div className="bg-[#2D2F45] px-5 flex justify-between">
+    <div className="bg-[#2D2F45] px-20 flex justify-between">
       <Image width={300} height={150} src="/compfest_logo_footer.svg" alt="home" />
       <div className="flex items-center">
         <div className="flex p-5 gap-x-5">
           {data.map((datum) => {
             return (
               <a key={datum.alt} target="_blank" rel="noreferrer" href={datum.href}>
-                <Image width={30} height={30} src={datum.src} alt={datum.alt} />
+                <Image width={20} height={20} src={datum.src} alt={datum.alt} />
               </a>
             )
           })}
