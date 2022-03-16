@@ -1,5 +1,8 @@
 import { useState } from "react"
 import Card from "../../elements/card"
+import styles from "./Explore.module.css"
+
+import Masonry from "react-masonry-css"
 
 type ExploreProps = {
   memes: any
@@ -26,9 +29,15 @@ const Explore: React.FC<ExploreProps> = ({ memes, saveMeme }) => {
         <button onClick={handleSubmit}>searchs</button>
       </div>
       <div className="mt-[40px]">
-        {memes?.map((meme) => (
-          <Card key={meme.id} meme={meme} saveClick={() => saveMeme(meme.id)} />
-        ))}
+        <Masonry
+          breakpointCols={3}
+          className={styles.mymasonrygrid}
+          columnClassName={styles.mymasonrygridcolumn}
+        >
+          {memes?.map((meme) => (
+            <Card key={meme.id} meme={meme} saveClick={() => saveMeme(meme.id)} />
+          ))}
+        </Masonry>
       </div>
     </div>
   )
