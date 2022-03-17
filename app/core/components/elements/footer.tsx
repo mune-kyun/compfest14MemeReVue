@@ -21,37 +21,37 @@ const Footer: BlitzComponentType = () => {
 
 const data = [
   {
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/COMPFEST/",
     src: "/faceboook-circle.svg",
     alt: "facebook",
   },
   {
-    href: "https://twitter.com",
+    href: "https://twitter.com/compfest",
     src: "/twitter.svg",
     alt: "twitter",
   },
   {
-    href: "https://youtube.com",
+    href: "https://www.youtube.com/channel/UC03QmhwvQEWVI608A-RCEpw",
     src: "/youtube.svg",
     alt: "youtube",
   },
   {
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/compfest/?hl=en",
     src: "/instagram.svg",
     alt: "instagram",
   },
   {
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/company/compfest",
     src: "/linkedin.svg",
     alt: "linkedin",
   },
   {
-    href: "https://line.com",
+    href: "https://line.me/R/ti/p/%40compfest",
     src: "/line.svg",
     alt: "line",
   },
   {
-    href: "https://medium.com",
+    href: "https://medium.com/compfest",
     src: "/medium.svg",
     alt: "medium",
   },
