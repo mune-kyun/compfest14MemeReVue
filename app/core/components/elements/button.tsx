@@ -10,7 +10,9 @@ const Button: React.FC<ButtonProps> = ({ buttonType, additionalStyle, handleClic
   if (buttonType == "active") {
     return (
       <button onClick={handleClick}>
-        <div className={`${generalStyle} bg-[#5561FF] hover:bg-[#3643FC] ${additionalStyle}`}>
+        <div
+          className={`${generalStyle} bg-gradient-to-b from-[#5561FF] to-[#3643FC] hover:bg-[#3643FC] ${additionalStyle}`}
+        >
           {children}
         </div>
       </button>
