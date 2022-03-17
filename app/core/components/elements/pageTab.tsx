@@ -14,7 +14,7 @@ const PageTab: React.FC<PageTabProps> = ({ pageList, pageIndex, setPage, additio
     >
       {pageList.map((page, index) => {
         const generalButtonStyle = "py-[12px] px-[100px]"
-        const additionalButtonStyle = index == pageIndex ? "bg-[#5561FF]" : "bg-[#1d1e2b]"
+        const additionalButtonStyle = index == pageIndex ? "bg-[#5561FF]" : "bg-[#242538]"
 
         return (
           <Button

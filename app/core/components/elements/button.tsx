@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({ buttonType, additionalStyle, handleClic
   } else if (buttonType == "dead") {
     return (
       <button className="hover:cursor-default">
-        <div className={`${generalStyle} bg-[#505a66] ${additionalStyle}`}>{children}</div>
+        <div className={`${generalStyle} bg-[#53536f] ${additionalStyle}`}>{children}</div>
       </button>
     )
   }
